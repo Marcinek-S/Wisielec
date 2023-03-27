@@ -9,15 +9,25 @@ const result = document.getElementById("result");
 const game = document.getElementById("game");
 const wrong = document.getElementById("wrong");
 const hangman = document.getElementById("hangman");
+const kate = document.getElementById("kate");
 const gameLimit = 10;
 let wrongCount = 0;
+let wylosowanaKategoria = "";
 
 function word() {
-  // const slowa = ["abbbbb", "babbbb", "bbabbb", "bbbabb", "bbbbab", "bbbbba"];
-  // const index = Math.floor(Math.random() * slowa.length);
+  const slowa = {
+    zwierzęta: ["pies", "kot", "małpa"],
+    przedmioty: ["telefon", "patelnia", "słuchawki"],
+  };
+  const kategorie = Object.keys(slowa);
+  const indexKategori = Math.floor(Math.random() * kategorie.length);
+  wylosowanaKategoria = kategorie[indexKategori];
+  const slowaDoWyboru = slowa[wylosowanaKategoria];
+  const indexWyboru = Math.floor(Math.random() * slowaDoWyboru.length);
 
-  return "siema";
+  return slowaDoWyboru[indexWyboru];
 }
+const private = word();
 
 function wordToGuessGenerator(word) {
   const wordToGuessLen = word.length;
@@ -25,10 +35,11 @@ function wordToGuessGenerator(word) {
     const letter = document.createElement("span");
     letter.innerHTML = "_";
     game.appendChild(letter);
+    kate.innerHTML = "kategoria: " + wylosowanaKategoria;
   }
 }
 
-wordToGuessGenerator(word());
+wordToGuessGenerator(private);
 
 function hangManBuild() {
   hangman.src = "/img/stage" + wrongCount + ".png";
@@ -67,13 +78,13 @@ function ifWin() {
   const spans = document.querySelectorAll(".game span");
   let wordCheck = "";
   if (wrongCount == gameLimit) {
-    endOfGame("Przegrana", word());
+    endOfGame("Przegrana", private);
   } else {
     spans.forEach((span) => {
       wordCheck += span.innerHTML;
     });
-    if (wordCheck === word()) {
-      endOfGame("Wygrana", word());
+    if (wordCheck === private) {
+      endOfGame("Wygrana", private);
     }
   }
 }
@@ -82,7 +93,7 @@ buttons.forEach((button) => {
   button.addEventListener(
     "click",
     () => {
-      if (goodGuess(button.innerHTML, word()) == true) {
+      if (goodGuess(button.innerHTML, private) == true) {
         ifWin();
         anime({
           targets: button,
