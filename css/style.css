@@ -15,14 +15,61 @@ body {
   display: grid;
 }
 
+#endHangmanL {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 400px;
+  height: 400px;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+#endHangmanR {
+  display: none;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+}
+
 .popup {
   display: none;
-  width: 50%;
+  width: 25%;
   height: 50%;
   place-self: center;
   background-color: rgba(70, 70, 70, 0.95);
   border-radius: 50px;
   text-align: center;
+}
+
+.popup #close {
+  position: relative;
+  top: 10px;
+  left: 200px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.popup h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.popup h3 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.popup span {
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -50,6 +97,11 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+#hangman {
+  width: 500px;
+  height: 500px;
 }
 
 .game {
@@ -97,9 +149,4 @@ body {
   background-color: grey;
   border: none;
   text-transform: uppercase;
-}
-
-#hangman {
-  width: 500px;
-  height: 500px;
 }/*# sourceMappingURL=style.css.map */

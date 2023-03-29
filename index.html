@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +9,16 @@
 </head>
 <body>
     <div class="" id="end">
+        <img src="" id="endHangmanL">
         <div class="popup" id="result">
-            <button id="close">Zamknij</button>
-            <h1></h1>
-            <p>Słowo na dziś:</p>
-            <span>Siema</span>
+            <button id="close">X</button>
+            <h1>wygrana</h1>
+            <h3>Słowo do odgadnięcia: </h3>
+            <span>siema</span>
+            <br>
+            <button id="next">Następne słowo</button>
         </div>
+        <img src="" id="endHangmanR">
     </div>
     <div class="wrapper">
     <div class="menu">Wisielec</div>
@@ -26,48 +30,13 @@
         <h3 id="kate">kategoria</h3>
     </div>
     <div class="letters">
-       <div class="letters_row">
-        <button class="letter">ą</button>
-        <button class="letter">ć</button>
-        <button class="letter">ę</button>
-        <button class="letter">ł</button>
-        <button class="letter">ó</button>
-        <button class="letter">ś</button>
-        <button class="letter">ń</button>
-        <button class="letter">ż</button>
-        <button class="letter">ź</button>
+       <div class="letters_row" id="row1">
        </div>
-       <div class="letters_row">
-        <button class="letter">q</button>
-        <button class="letter">w</button>
-        <button class="letter">e</button>
-        <button class="letter">r</button>
-        <button class="letter">t</button>
-        <button class="letter">y</button>
-        <button class="letter">u</button>
-        <button class="letter">i</button>
-        <button class="letter">o</button>
-        <button class="letter">p</button>
+       <div class="letters_row" id="row2">
        </div>
-       <div class="letters_row">
-        <button class="letter">a</button>
-        <button class="letter">s</button>
-        <button class="letter">d</button>
-        <button class="letter">f</button>
-        <button class="letter">g</button>
-        <button class="letter">h</button>
-        <button class="letter">j</button>
-        <button class="letter">k</button>
-        <button class="letter">l</button>
+       <div class="letters_row" id="row3">
        </div>
-       <div class="letters_row">
-        <button class="letter">z</button>
-        <button class="letter">x</button>
-        <button class="letter">c</button>
-        <button class="letter">v</button>
-        <button class="letter">b</button>
-        <button class="letter">n</button>
-        <button class="letter">m</button>
+       <div class="letters_row" id="row4">
        </div>
     </div>
 </div>
